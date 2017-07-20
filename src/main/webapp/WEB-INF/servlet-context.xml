@@ -7,18 +7,7 @@
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/resources/**" location="/resources/" />
-    <context:component-scan base-package="com.livebetter"/>
-
-    <bean id="chinese" class="com.livebetter.model.Chinese" />
-    <bean id="timeHandler" class="com.livebetter.handler.TimeHandler" />
-
-    <aop:config>
-        <aop:aspect id="time" ref="timeHandler">
-            <aop:pointcut id="sleep" expression="execution(* com.livebetter.model.Human.*(..))" />
-            <aop:before method="printTime" pointcut-ref="sleep"/>
-            <aop:after method="printTime" pointcut-ref="sleep"/>
-        </aop:aspect>
-    </aop:config>
+    <context:component-scan base-package="com.livebetter.controller"/>
 
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
