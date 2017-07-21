@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS livebetter;
+
+ALTER DATABASE livebetter
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+GRANT ALL PRIVILEGES ON livebetter.* TO yaxuan@localhost IDENTIFIED BY '123456';
+
+USE livebetter;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  mobile VARCHAR(13) NOT NULL,
+  password VARCHAR(20),
+  username VARCHAR(30),
+  avatar_id INT
+) engine=InnoDB;
